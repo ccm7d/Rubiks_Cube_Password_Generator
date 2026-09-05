@@ -207,59 +207,7 @@ def create_mapping(shift, chars):
 
 
 # ============================================================
-# Reads user's movement ( only one move )
-# ============================================================
-
-def parse_move(move_string):
-    if not move_string:
-        raise ValueError("الحركة فارغة.")
-
-    i = 0
-    move = move_string[i].upper()
-
-    if move not in moves_name:
-        raise ValueError(
-            f"حركة غير صحيحة: {move}"
-        )
-
-    i += 1
-
-    # dir
-    if i < len(move_string) and move_string[i] == "'":
-
-        dir = -1
-        i += 1
-
-    else:
-
-        dir = 1
-
-    # num of times
-    if i < len(move_string):
-
-        number_part = move_string[i:]
-
-        if not number_part.isdigit():
-            raise ValueError(
-                f"حركة غير صحيحة: {move_string}"
-            )
-
-        times = int(number_part)
-
-    else:
-
-        times = 1
-
-    if times <= 0:
-        raise ValueError(
-            "عدد مرات الحركة يجب أن يكون أكبر من صفر."
-        )
-
-    return move, dir, times
-
-
-# ============================================================
-# Reads more than one move
+# Reads user's movement
 # ============================================================
 
 def apply_moves(cube, moves):
