@@ -1,6 +1,7 @@
-# Rubik Cube Password Generator
+# Rubik's Cube Password Generator
 
 A Python project that generates passwords using **Rubik's Cube movements** and a customizable character list.
+
 
 > **Note:** This project is for experimentation and learning. It is not necessarily recommended for protecting your real-world accounts.
 
